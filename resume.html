@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Resuma Generator</title>
+    <link rel="stylesheet" href="resume.css">
+    <script src="resume.js"></script>
+</head>
+<body>
+<div class="container" id="cv-form">
+    <h1 class="text-center my-2">Resume Generator</h1>
+
+    <div class="row">
+    <div class="col-mt-6">
+            <h3>Personal Information</h3>
+        </div>
+            <div class="form-group mt-2">
+                <label for="nameField">Your Name</label>
+                <input type="text"  id="nameField" placeholder="Enter here" class="form-control">
+            </div>
+        </div>
+        <div class=" form-group mt-2 ">
+            <label for="contactField">Contact number</label>
+            <input type="text "  id="contactField" placeholder="Enter here" class="form-control" >
+        </div>
+        <div class=" form-group mt-2 ">
+            <label for="adressField">Your Adress</label>
+            <textarea  id="adressField" placeholder="Enter here" class="form-control" rows="5"></textarea>
+        </div>
+        <div class="form-group mt-3">
+            <label for="">Select Your Profile Photo</label>
+            <input id="imgField" type="file" class="form-control">
+        </div>
+
+        <p class="text-secondary my-3">Importent Links</p>
+
+        <div class="form-group mt-2">
+            <label for="fbField">Facebook link</label>
+            <input type="text"  id="fbField" placeholder="Enter here" class="form-control" id="imgField">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="instaField">Instagram Link</label>
+            <input type="text"  id="instaField" placeholder="Enter here" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="linkedField">LinkedIn Link</label>
+            <input type="text"  id="LinkedField" placeholder="Enter here" class="form-control">
+        </div>
+        
+
+
+        <div class="col-mt-6">
+
+            <h3 class="heading">professional Information</h3>
+
+
+            <div class=" form-group mt-2 ">
+                <label for="">Objective</label>
+                <textarea placeholder="Enter here" class="form-control" id="objectiveField"></textarea>
+            </div>
+
+            <div class=" form-group mt-2 " id="we">
+                <label for="">Work Experience</label>
+                <textarea placeholder="Enter here" class="form-control weField" ></textarea>
+                
+                <div class="container text-center mt-3  " id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-primary btn-sm">ADD</button>
+                </div>
+            </div>
+
+            <div class=" form-group mt-2 " id="aq">
+                <label for="">Acadamic Qualification</label>
+                <textarea placeholder="Enter here" class="form-control aqField" ></textarea>
+                
+                <div class="container text-center mt-3" id="aqAddButton">
+                    <button onclick="addNewAQField()" class="btn btn-primary btn-sm">ADD</button>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+</div>
+
+
+<div class="container" id="cv-template">
+    <div class="row">
+        <div class="col-md-4 text-center py-5 background">
+            <img src="images/profile.jpg" alt="" class="img-fluid myimg" id="imgTemplate">
+           <div class="container">
+            <p id="nameT1">gowrish varma</p>
+            <p id="contactT">+919494768855, +919490713588</p>
+            <p id="adressT">545345/4354344 sector 56 noida , India</p>
+            <hr /> 
+
+            <p>
+                <a id="fbT" href="#">https://www.Facebook.com/gowrishvarma</a>
+            </p>
+            <p>
+                <a id="instaT" href="#">https://www.Instagram.com/gowrishvarma</a>
+            </p>
+            <p>
+                <a id="LinkedT" href="#">https://www.LinkedIn.com/gowrishvarma</a>
+            </p>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-8 py-5">
+            <h1 id="nameT2" class="text-center" style="font-weight: 980;">
+                Gowrish varma
+            </h1>
+            
+            <div class="card mt-4">
+                <div class="card-header background" >
+                    Objective
+                </div>
+                <div class="card-body">
+                    <p id="objectiveT">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate atque quos quas nostrum a deserunt dicta maiores dolorem libero! Nulla cumque nostrum molestias eveniet mollitia explicabo maiores odio doloremque esse.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique iusto, sunt odit animi temporibus delectus accusamus repudiandae iste quisquam? Eaque officia odit amet laboriosam minus eius numquam error reiciendis omnis.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card mt-4">
+                <div class="card-header background" >
+                    Work Experience
+                </div>
+                <div class="card-body">
+                    <ul id="weT">
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="card mt-4">
+                <div class="card-header background" >
+                    Acadamic Qualification
+                </div>
+                <div class="card-body">
+                    <ul id="aqT">
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, corrupti!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="container mt-3 text-center">
+                <button onclick="printCV()" class="btn background">Print</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
+</body>
+</html>
